@@ -17,7 +17,6 @@ formRef.addEventListener('input', throttle(updateStorage, 500));
 formRef.addEventListener('submit', clearLocaleStorageAndFormFields);
 
 function updateStorage(evt) {
-  console.log(evt.currentTarget);
   const feedback = {};
   const formData = new FormData (formRef);
   formData.forEach((value, name) => {
