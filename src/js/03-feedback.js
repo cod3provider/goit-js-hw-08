@@ -29,6 +29,11 @@ function updateStorage(evt) {
 function clearLocaleStorageAndFormFields(evt) {
   if (evt.currentTarget.elements.message.value) {
     evt.preventDefault();
+
+    const savedParse = localStorage.getItem(LOCALSTORAGE_KEY);
+    const parsedLocalKey = JSON.parse(savedParse);
+    console.log(parsedLocalKey);
+
     localStorage.clear();
     formRef.reset();
   } else {
